@@ -446,15 +446,7 @@ class Game {
         this._createBinsAndPackItems(pos);
     }
 
-    addBins(nBin) {
-        for(let i=0; i<nBin; ++i) {
-            let bin = new BinUI(this.level.binXLen, this.level.binYLen, false,
-                this.bins.length, this.scaleFactor);
-            this.bins.push(bin);
-            let packingArea = document.getElementById('packing-area');
-            packingArea.appendChild(bin.domElem);
-        }
-    }
+    addBins(nBin) {}
 
     trimBins(targetEmpty) {
         let nEmpty = 0;
