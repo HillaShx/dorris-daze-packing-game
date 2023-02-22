@@ -1130,7 +1130,11 @@ class Game {
                 binsNeeded = Math.max(binsNeeded, pos[i][0] + 2);
             }
         }
-        this.addBins(binsNeeded);
+        let bin = new BinUI(this.level.binXLen, this.level.binYLen, false,
+                this.bins.length, this.scaleFactor);
+            this.bins.push(bin);
+            let packingArea = document.getElementById('packing-area');
+            packingArea.appendChild(bin.domElem);
 
         // move items as per pos
         for(let i=0; i < pos.length && i < rawItems.length; ++i) {
